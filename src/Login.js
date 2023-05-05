@@ -4,7 +4,11 @@ import { Text, TextInput, StyleSheet, View, Image, } from 'react-native';
 import { Card } from 'react-native-paper';
 
 
+
+
 import Icon from '../assets/perfilIcon.png';
+
+
 
 
 export default function Login () {
@@ -30,7 +34,11 @@ export default function Login () {
 }
 
 
+
+
 const styles = StyleSheet.create({
+
+
 
 
   container: {
@@ -41,6 +49,8 @@ const styles = StyleSheet.create({
   },
 
 
+
+
   card: {
     backgroundColor: '#6304AE',
     width: '90%',
@@ -49,9 +59,13 @@ const styles = StyleSheet.create({
   },
 
 
+
+
   titleContainer: {
     alignItems: 'center',
   },
+
+
 
 
   image:{
@@ -60,10 +74,14 @@ const styles = StyleSheet.create({
   },
 
 
+
+
   title: {
     fontWeight: 'bold',
     color: '#FF5F0F',
   },
+
+
 
 
   input: {
@@ -71,10 +89,5 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     margin: 10,
     width: '90%',
-
-
   },
 });
-
-
-

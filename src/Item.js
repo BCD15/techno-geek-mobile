@@ -1,27 +1,32 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Card } from 'react-native-paper';
-import { DefaultTheme } from 'react-native-paper';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-export default function Item () {
+
+export default function Item (props) {
   return (
-    <View style={styles.container}>
-      <Card style={styles.card}>
-        <Card.Title title="Item" />
-      </Card>
+    <View style={styles.card}>
+      <Image style={styles.imagem} source={{ uri: props.item.imgitem }} />
+      <Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.titulo}</Text>
+      <Text style={{color: "grey", margin: 2, fontWeight: "semiBold"}}>{props.preco}</Text>
+      <TouchableOpacity style={styles.botao}>
+        <Text style={{ color: "#FF5F0F", fontWeight: "bold" }}>Comprar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: DefaultTheme.colors.background,
-    alignItems: 'center',
-    paddingTop: 10
-  },
   card: {
-    width: '90%'
-  }
+    backgroundColor: "white",
+    width: "40%",
+    height: 350,
+    margin: 15,
+  },
+  imagem: {
+    resizeMode: "stretch",
+    width: "100%",
+    height: 260,
+  },
 });
+
+
+
+

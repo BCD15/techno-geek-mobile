@@ -3,13 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, TextInput, StyleSheet, View, Image, } from 'react-native';
 import { Card } from 'react-native-paper';
 
-
-
-
 import Icon from '../assets/perfilIcon.png';
-
-
-
 
 export default function Login () {
   return (
@@ -38,18 +32,12 @@ export default function Login () {
 
 const styles = StyleSheet.create({
 
-
-
-
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 10,
   },
-
-
-
 
   card: {
     backgroundColor: '#6304AE',
@@ -58,31 +46,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-
-
-
   titleContainer: {
     alignItems: 'center',
   },
-
-
-
 
   image:{
     height: 75,
     width: 70,
   },
 
-
-
-
   title: {
     fontWeight: 'bold',
     color: '#FF5F0F',
   },
-
-
-
 
   input: {
     backgroundColor: '#FFFFFF',

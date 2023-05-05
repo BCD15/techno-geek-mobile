@@ -54,15 +54,17 @@ export default function Home ({navigation}) {
         <View style={styles.header}>
         <Text style={{ color: "#FF5F0F", fontWeight: "bold", fontSize: 20, }}>TechnoGeek</Text>
         <TextInput style={styles.input} />
+        </View>
         <Button mode="contained" onPress={() => navigation.navigate('Login')} style={styles.botao}>
             <Image source={Icon} style={styles.imageLogin}></Image>
           </Button>
         </View>
         <View style={styles.container}>
-        <Text style={{ fontWeight: "bold", color: "white" }}>Mais vendidos da semana</Text>
+        <Text style={{borderRadius:10, fontWeight: "bold", color: "white", backgroundColor: "#FF5F0F", width: "40%", height: "3%", alignItems: "center", justifyContent: "center", textAlign:"center",}}>Mais vendidos da semana</Text>
         <View style={styles.main}>
           {itens.map((itens) => (
-             <Item item={itens} key={itens.id} />
+             <Item item={itens} 
+             key={itens.id} />
           ))}
         </View>
       </View>
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 15,
+    paddingTop: 20,
    
   },
 
@@ -128,6 +130,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     width: "100%",
+    alignItems: "center",
+    justifyContent:"center",
   },
 
 
@@ -136,15 +140,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
+    padding: 20,
+    height:150,
   },
 
 
   input: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
+    borderRadius: 10,
     margin: 10,
-    width: '40%',
+    width: 200,
+    height: 25,
   },
 
 
@@ -152,6 +157,5 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
   },
-
 
 });

@@ -3,13 +3,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View, Text, ScrollView, TextInput, Image, } from "react-native";
 import { Button, Card } from 'react-native-paper';
 
-
 import Icon from '../assets/perfilIcon.png';
 
-
 import Item from "./Item";
-// import { Image } from "react-native-web";
-
 
 export default function Home ({navigation}) {
   const [itens, setItens] = React.useState([
@@ -43,7 +39,6 @@ export default function Home ({navigation}) {
     },
   ]);
 
-
   return  (
     <LinearGradient
     colors={['#000000', '#342348']}
@@ -58,7 +53,6 @@ export default function Home ({navigation}) {
         <Button mode="contained" onPress={() => navigation.navigate('Login')} style={styles.botao}>
             <Image source={Icon} style={styles.imageLogin}></Image>
           </Button>
-        </View>
         <View style={styles.container}>
         <Text style={{borderRadius:10, fontWeight: "bold", color: "white", backgroundColor: "#FF5F0F", width: "40%", height: "3%", alignItems: "center", justifyContent: "center", textAlign:"center",}}>Mais vendidos da semana</Text>
         <View style={styles.main}>
@@ -68,28 +62,10 @@ export default function Home ({navigation}) {
           ))}
         </View>
       </View>
-      <Card style={styles.card}>
-        <Card.Content style={styles.content}>
-          <Button mode="contained" onPress={() => navigation.navigate('Item')} style={styles.botao}>
-            Item
-          </Button>
-        </Card.Content>
-        <Card.Content style={styles.content}>
-          <Button mode="contained" onPress={() => navigation.navigate('Cadastro')} style={styles.botao}>
-            Cadastro
-          </Button>
-        </Card.Content>
-        <Card.Content style={styles.content}>
-          <Button mode="contained" onPress={() => navigation.navigate('Login')} style={styles.botao}>
-            Login
-          </Button>
-        </Card.Content>
-      </Card>
     </ScrollView>
     </LinearGradient>
   );
 };
-
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -103,12 +79,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
 
-
   content: {
     width: '90%',
     margin: 15,
   },
-
 
   botao: {
     backgroundColor: '#6304AE',
@@ -119,10 +93,8 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20,
-   
+    paddingTop: 20,   
   },
-
 
   main: {
     flex: 1,
@@ -134,7 +106,6 @@ const styles = StyleSheet.create({
     justifyContent:"center",
   },
 
-
   header: {
     backgroundColor: "#6304AE",
     flexDirection: "row",
@@ -144,7 +115,6 @@ const styles = StyleSheet.create({
     height:150,
   },
 
-
   input: {
     borderRadius: 10,
     margin: 10,
@@ -152,10 +122,8 @@ const styles = StyleSheet.create({
     height: 25,
   },
 
-
   imageLogin:{
     height: 40,
     width: 40,
   },
-
 });

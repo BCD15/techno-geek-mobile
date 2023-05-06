@@ -3,12 +3,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, TextInput, StyleSheet, View, ScrollView, Pressable } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
-
-function onPress () {
-  return alert('enviado');
-}
-
-
 export default function Cadastro ({navigation}) {
   return (
     <LinearGradient
@@ -22,23 +16,28 @@ export default function Cadastro ({navigation}) {
         <View style={styles.titleContainer}>
           <Text style={styles.title}> Cadastre-se </Text>
         </View>
-          <TextInput type="text" name="name" placeholder='Name' style={styles.input}/>
-          <TextInput type="date" name="nascimento" placeholder='Idade' style={styles.input}/>
-          <TextInput type="number" name="cpf" placeholder='CPF' style={styles.input}/>
-          <TextInput type="email" name="email" placeholder='Email' style={styles.input}/>
-          <TextInput type="text" name="Estado" placeholder='Estado' style={styles.input}/>
-          <TextInput type="password" name="senha" placeholder='Senha' style={styles.input}/>
-          <TextInput type="password" name="Confirme-Senha" placeholder='Confirme a senha' style={styles.input}/>      
-          <Pressable style={styles.button} onPress={onPress}>
-            <Text> Enviar </Text>
-          </Pressable>
-          <View style={styles.next}>
-          <Text>Já possui uma conta?
-            <Button onPress={() => navigation.navigate('Login')}>
+        <View>
+          <TextInput type="text" name="name" placeholder='Nome:' style={styles.input}/>
+          <TextInput type="date" name="nascimento" placeholder='Idade:' style={styles.input}/>
+          <TextInput type="number" name="cpf" placeholder='CPF:' style={styles.input}/>
+          <TextInput type="email" name="email" placeholder='Email:' style={styles.input}/>
+          <TextInput type="text" name="Estado" placeholder='Estado:' style={styles.input}/>
+          <TextInput type="password" name="senha" placeholder='Senha:' style={styles.input}/>
+          <TextInput type="password" name="Confirme-Senha" placeholder='Confirme a senha:' style={styles.input}/>      
+        </View>
+          <View style={{alignItems: 'center', margin: 10,}}>
+          <Text>
+            Já possui conta?
+            <Text style={styles.link} onPress={() => navigation.navigate('Login')}>
               Clique Aqui
-            </Button>
+            </Text> 
           </Text>
-          </View>
+        </View>
+        <View style={{alignItems: 'center',}}>
+          <Button mode="elevated" onPress={() => navigation.navigate('Home')} style={styles.botao}>
+            <Text style={{color: '#FF5F0F',}}>Enviar</Text>
+          </Button>
+        </View>
       </Card>
       </ScrollView>
     </View>
@@ -51,14 +50,12 @@ export default function Cadastro ({navigation}) {
 
 const styles = StyleSheet.create({
 
-
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 10,
   },
-
 
   card: {
     backgroundColor: '#6304AE',
@@ -67,17 +64,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-
   titleContainer: {
     alignItems: 'center',
   },
-
 
   title: {
     fontWeight: 'bold',
     color: '#FF5F0F',
   },
-
 
   input: {
     backgroundColor: '#FFFFFF',
@@ -86,25 +80,12 @@ const styles = StyleSheet.create({
     width: '90%',
   },
 
-
-  button: {
-    alignItems: 'center',
-    borderRadius: 12,
-    margin: 10,
-    width: '90%',
-    backgroundColor: '#FF5F0F',
+  botao: {
+    width: 130,
+    backgroundColor: '#6304AE',
   },
 
-
-  next: {
-    flexDirection: 'row',
+  link: {
+    color: '#FF5F0F',
   },
 });
-
-
-
-
-
-
-
-

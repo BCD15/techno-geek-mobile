@@ -22,17 +22,19 @@ function InputWithIcon() {
   }
 
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      {isImageVisible && (
-        <TouchableWithoutFeedback onPress={handleIconClick}>
-          <Image source={searchIcon} style={styles.lupa} />
-        </TouchableWithoutFeedback>
-      )}
-      {isInputVisible && (
-        <View style={{ flexDirection: 'row', flex: 1 }}>
-          <TextInput onSubmitEditing={handleInputSubmit} placeholder="Pesquisar..." style={styles.input} />
-        </View>
-      )}
+    <View style={{ flexDirection: 'row-reverse', alignItems: 'center', width: 140, margin: 4, }}>
+        {isImageVisible && (
+          <TouchableWithoutFeedback onPress={handleIconClick}>
+            <Image source={searchIcon} style={styles.lupa} />
+          </TouchableWithoutFeedback>
+        )}
+      <View style={{ flexDirection: 'row', alignItems: 'center', width: 140, margin: 5, }}>
+        {isInputVisible && (
+          <View style={{ flexDirection: 'row', flex: 1 }}>
+            <TextInput onSubmitEditing={handleInputSubmit} placeholder="Pesquisar..." style={styles.input} />
+          </View>
+        )}
+      </View>
     </View>
   );
 }
@@ -150,10 +152,10 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    margin: 10,
-    flex: 1,
-    flexGrow: 1,
+    marginTop: 10,
+    marginBottom: 10,
     height: 25,
+    width: '100%',
   },
 
   imageLogin: {
@@ -181,5 +183,8 @@ const styles = StyleSheet.create({
   title: { 
     color: "#FF5F0F", 
     fontWeight: "bold", 
-    fontSize: 20, }
+    fontSize: 20, 
+    width: '40%',
+  },
+
 });

@@ -1,11 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View, Text, ScrollView, TextInput, Image, } from "react-native";
-import { Button, Card } from 'react-native-paper';
+import { StyleSheet, View, Text, ScrollView, TextInput, Image, TouchableWithoutFeedback, } from "react-native";
 
 import Icon from '../assets/perfilIcon.png';
+import searchIcon from '../assets/searchIcon.png';
 
 import Item from "./Item";
+
+function InputWithIcon() {
+  const [isInputVisible, setIsInputVisible] = useState(false);
+  const [isImageVisible, setIsImageVisible] = useState(true);
+
+  function handleIconClick() {
+    setIsInputVisible(true);
+    setIsImageVisible(false);
+  }
+
+  function handleInputSubmit() {
+    setIsInputVisible(false);
+    setIsImageVisible(true);
+  }
+
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      {isImageVisible && (
+        <TouchableWithoutFeedback onPress={handleIconClick}>
+          <Image source={searchIcon} style={styles.lupa} />
+        </TouchableWithoutFeedback>
+      )}
+      {isInputVisible && (
+        <View style={{ flexDirection: 'row', flex: 1 }}>
+          <TextInput onSubmitEditing={handleInputSubmit} placeholder="Pesquisar..." style={styles.input} />
+        </View>
+      )}
+    </View>
+  );
+}
 
 export default function Home ({navigation}) {
   const [itens, setItens] = React.useState([
@@ -41,28 +71,30 @@ export default function Home ({navigation}) {
 
   return  (
     <LinearGradient
-    colors={['#000000', '#342348']}
-    style={{
-      flex: 1,
-    }}>
-    <ScrollView style={styles.scrollView}>
-        <View style={styles.header}>
-        <Text style={{ color: "#FF5F0F", fontWeight: "bold", fontSize: 20, }}>TechnoGeek</Text>
-        <TextInput style={styles.input} />
+      colors={['#000000', '#342348']}
+      style={{
+        flex: 1,
+      }}>
+      <ScrollView style={styles.scrollView}>
+        <View style={{ flex: 1, }}>
+          <View style={styles.header}>
+            <Text style={styles.title}>TechnoGeek</Text>
+            <InputWithIcon />
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Login')}>
+              <Image source={Icon} style={styles.imageLogin}></Image>
+            </TouchableWithoutFeedback>
+          </View>
         </View>
-        <Button mode="contained" onPress={() => navigation.navigate('Login')} style={styles.botao}>
-            <Image source={Icon} style={styles.imageLogin}></Image>
-          </Button>
         <View style={styles.container}>
-        <Text style={{borderRadius:10, fontWeight: "bold", color: "white", backgroundColor: "#FF5F0F", width: "40%", height: "3%", alignItems: "center", justifyContent: "center", textAlign:"center",}}>Mais vendidos da semana</Text>
-        <View style={styles.main}>
-          {itens.map((itens) => (
+          <Text style={styles.text}>Mais vendidos da semana</Text>
+          <View style={styles.main}>
+            {itens.map((itens) => (
              <Item item={itens} 
              key={itens.id} />
-          ))}
+            ))}
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </LinearGradient>
   );
 };
@@ -112,18 +144,42 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 20,
-    height:150,
+    height: 80,
   },
 
   input: {
+    backgroundColor: '#FFFFFF',
     borderRadius: 10,
     margin: 10,
-    width: 200,
+    flex: 1,
+    flexGrow: 1,
     height: 25,
   },
 
-  imageLogin:{
-    height: 40,
-    width: 40,
+  imageLogin: {
+    width: 35,
+    height: 35,
   },
+
+  text: {
+    borderRadius: 10, 
+    fontWeight: 'bold', 
+    color: 'white', 
+    backgroundColor: '#FF5F0F', 
+    width: '50%', 
+    height: '3%', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    textAlign: 'center',
+  },
+
+  lupa: {
+    width: 25,
+    height: 25,
+  },
+
+  title: { 
+    color: "#FF5F0F", 
+    fontWeight: "bold", 
+    fontSize: 20, }
 });

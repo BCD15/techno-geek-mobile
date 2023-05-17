@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View, Text, ScrollView, TextInput, Image, TouchableWithoutFeedback, } from "react-native";
 
-import Icon from '../assets/perfilIcon.png';
+import perfilIcon from '../assets/perfilIcon.png';
 import searchIcon from '../assets/searchIcon.png';
+import carrinhoIcon from '../assets/carrinhoIcon.png';
 
 import Item from "./Item";
 
@@ -69,6 +70,20 @@ export default function Home ({navigation}) {
       titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
       preco: "R$89,90",
     },
+    {
+      id: 5,
+      imgitem:
+        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
+      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
+      preco: "R$89,90",
+    },
+    {
+      id: 6,
+      imgitem:
+        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
+      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
+      preco: "R$89,90",
+    },
   ]);
 
   return  (
@@ -82,8 +97,11 @@ export default function Home ({navigation}) {
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
+            <TouchableWithoutFeedback>
+              <Image source={carrinhoIcon} style={styles.imageLogin}></Image>
+            </TouchableWithoutFeedback>            
             <TouchableWithoutFeedback onPress={() => navigation.navigate('Login')}>
-              <Image source={Icon} style={styles.imageLogin}></Image>
+              <Image source={perfilIcon} style={styles.imageLogin}></Image>
             </TouchableWithoutFeedback>
           </View>
         </View>

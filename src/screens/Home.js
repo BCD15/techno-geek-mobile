@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View, Text, ScrollView, TextInput, Image, TouchableWithoutFeedback, } from "react-native";
 
-import perfilIcon from '../assets/perfilIcon.png';
-import searchIcon from '../assets/searchIcon.png';
-import carrinhoIcon from '../assets/carrinhoIcon.png';
+import perfilIcon from '../../assets/perfilIcon.png';
+import searchIcon from '../../assets/searchIcon.png';
+import carrinhoIcon from '../../assets/carrinhoIcon.png';
 
 import Item from "./Item";
 
@@ -94,6 +94,7 @@ export default function Home ({navigation}) {
       }}>
       <ScrollView style={styles.scrollView}>
         <View style={{ flex: 1, }}>
+          <ScrollView  horizontal={true}>
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
@@ -104,6 +105,7 @@ export default function Home ({navigation}) {
               <Image source={perfilIcon} style={styles.imageLogin}></Image>
             </TouchableWithoutFeedback>
           </View>
+          </ScrollView>
         </View>
         <View style={styles.container}>
           <Text style={styles.text}>Mais vendidos da semana</Text>

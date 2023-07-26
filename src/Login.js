@@ -26,7 +26,7 @@ export default function Login ({navigation}) {
             Não possui conta?
             <Text style={styles.link} onPress={() => navigation.navigate('Cadastro')}>
               Clique Aqui
-            </Text>  b
+            </Text>  
           </Text>
         </View>
         <View style={{alignItems: 'center',}}>
@@ -75,11 +75,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     margin: 10,
     width: '90%',
-  },
-
-  botao: {
-    width: 130,
-    backgroundColor: '#6304AE',
   },
 
   link: {

@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View, Text, ScrollView, TextInput, Image, TouchableWithoutFeedback, } from "react-native";
+import { StyleSheet, View, Text, ScrollView, TextInput, Image, TouchableWithoutFeedback, Button,} from "react-native";
 
 import perfilIcon from '../assets/perfilIcon.png';
 import searchIcon from '../assets/searchIcon.png';
 import carrinhoIcon from '../assets/carrinhoIcon.png';
 
 import Item from "./Item";
+import { TouchableOpacity } from "react-native-web";
 
 function InputWithIcon() {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [isImageVisible, setIsImageVisible] = useState(true);
+
+  
 
   function handleIconClick() {
     setIsInputVisible(true);
@@ -52,37 +55,23 @@ export default function Home ({navigation}) {
     {
       id: 2,
       imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
-      preco: "R$89,90",
+        "https://tfcprw.vtexassets.com/arquivos/ids/168877-800-auto?v=637976700407100000&width=800&height=auto&aspect=true",
+      titulo: "CAMISETA ONE PIECE GRUPO",
+      preco: "R$69,90",
     },
     {
       id: 3,
       imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
-      preco: "R$89,90",
+        "https://tfcprw.vtexassets.com/arquivos/ids/159717-800-auto?v=637976655524070000&width=800&height=auto&aspect=true",
+      titulo: "CAMISETA NARUTO KAKASHI ANBU",
+      preco: "R$69,90",
     },
     {
       id: 4,
       imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
-      preco: "R$89,90",
-    },
-    {
-      id: 5,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
-      preco: "R$89,90",
-    },
-    {
-      id: 6,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
-      preco: "R$89,90",
+        "https://tfcprw.vtexassets.com/arquivos/ids/171757-800-auto?v=638035198672400000&width=800&height=auto&aspect=true",
+      titulo: "CAMISETA PANTERA NEGRA TRIBAL",
+      preco: "R$79,90",
     },
   ]);
 
@@ -93,7 +82,10 @@ export default function Home ({navigation}) {
         flex: 1,
       }}>
       <ScrollView style={styles.scrollView}>
-        <View style={{ flex: 1, }}>
+        <View style={styles.upheader}>
+          <View style={styles.promo}>
+            <Text style={styles.tpromo}>Frete grátis para compras acima de R$200,00 </Text>
+          </View>
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
@@ -106,12 +98,24 @@ export default function Home ({navigation}) {
           </View>
         </View>
         <View style={styles.container}>
-          <Text style={styles.text}>Mais vendidos da semana</Text>
+          <View style={styles.banner}>
+            <Image source={{uri: 'https://media.tenor.com/FQCtm9c6npoAAAAd/anime-live.gif'}} style={{width: 410,height:150,borderColor:"#6304AE",borderWidth: 3}}>
+            </Image>
+          </View>
+          <Text style={styles.text}>Recomendados</Text>
           <View style={styles.main}>
             {itens.map((itens) => (
              <Item item={itens} 
              key={itens.id} />
             ))}
+          </View>
+          <View style={styles.footer}>
+            <Text style={{color:"white", fontSize:23,fontWeight: "bold",}}>Alguma dúvida?</Text>
+            <Text style={{color:"white",}}>Fale conosco.</Text>
+            <TextInput type="text" name="name" placeholder='Name' style={styles.forms}/>
+            <TextInput type="text" name="email" placeholder='Email' style={styles.forms}/>
+            <TextInput type="text" name="comentarios" placeholder="Comentario" style={styles.forms} />
+            <TouchableOpacity style={styles.eform}>Enviar</TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -120,10 +124,11 @@ export default function Home ({navigation}) {
 };
 
 const styles = StyleSheet.create({
+ 
   scrollView: {
     paddingTop: 10
   },
- 
+
   card: {
     width: '80%',
     marginLeft: 'auto',
@@ -145,7 +150,6 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20,   
   },
 
   main: {
@@ -156,6 +160,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent:"center",
+    marginBottom: 20,
   },
 
   header: {
@@ -186,8 +191,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold', 
     color: 'white', 
     backgroundColor: '#FF5F0F', 
-    width: '50%', 
-    height: '3%', 
+    width: 200, 
+    height: 20, 
     alignItems: 'center', 
     justifyContent: 'center', 
     textAlign: 'center',
@@ -204,5 +209,60 @@ const styles = StyleSheet.create({
     fontSize: 20, 
     width: '40%',
   },
+  
+  banner:{
+    marginBottom: 10,
+  },
 
+  promo:{
+    backgroundColor: "#ff5f0f",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: 20,
+    borderWidth: 2,
+    borderColor: "#ff5f0f",
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    textAlign: 'center',
+  },
+
+  tpromo:{
+    color: "white", 
+    fontWeight: "bold", 
+    fontSize: 10, 
+  },
+
+  footer:{
+    backgroundColor: "#ff5f0f",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 20,
+    height: 300,
+    width:410
+  },
+
+  forms:{
+    borderColor:"white", 
+    borderWidth:2, 
+    width:300,
+    height:50,
+    borderRadius:15,
+    padding:2,
+    color:"white",
+    marginBottom:5,
+  },
+  eform: {
+    borderRadius: 10, 
+    fontWeight: 'bold', 
+    color: '#FF5F0F', 
+    backgroundColor: 'white', 
+    width: 80, 
+    height: 20, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    textAlign: 'center',
+  },
+  
 });

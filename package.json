@@ -19,6 +19,7 @@
     "react-dom": "18.2.0",
     "react-native": "0.71.6",
     "react-native-paper": "^5.7.0",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-web": "~0.18.10"
   },
   "devDependencies": {

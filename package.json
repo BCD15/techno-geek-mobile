@@ -12,8 +12,10 @@
     "@expo/webpack-config": "^18.0.1",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
+    "axios": "^1.4.0",
     "expo": "~48.0.11",
     "expo-linear-gradient": "^12.1.2",
+    "expo-secure-store": "^12.1.1",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,7 +23,8 @@
     "react-native-paper": "^5.7.0",
     "react-native-select-dropdown": "^3.3.4",
     "react-native-snap-carousel": "^3.9.1",
-    "react-native-web": "~0.18.10"
+    "react-native-web": "~0.18.10",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

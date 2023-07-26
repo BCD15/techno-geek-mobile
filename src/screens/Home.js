@@ -11,9 +11,9 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
-import perfilIcon from "../assets/perfilIcon.png";
-import searchIcon from "../assets/searchIcon.png";
-import carrinhoIcon from "../assets/carrinhoIcon.png";
+import perfilIcon from '../../assets/perfilIcon.png';
+import searchIcon from '../../assets/searchIcon.png';
+import carrinhoIcon from '../../assets/carrinhoIcon.png';
 
 import Item from "./Item";
 import { TouchableOpacity } from "react-native-web";
@@ -116,6 +116,8 @@ export default function Home({ navigation }) {
               Frete grátis para compras acima de R$200,00{" "}
             </Text>
           </View>
+        <View style={{ flex: 1, }}>
+          <ScrollView  horizontal={true}>
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
@@ -143,6 +145,7 @@ export default function Home({ navigation }) {
               }}
             />
           </View>
+          </ScrollView>
         </View>
         <View style={styles.container}>
           <View style={styles.banner}>

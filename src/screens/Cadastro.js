@@ -1,6 +1,6 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Text, TextInput, StyleSheet, View, ScrollView, Pressable } from 'react-native';
+import { Text, TextInput, StyleSheet, View, ScrollView } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
 export default function Cadastro ({navigation}) {
@@ -21,7 +21,6 @@ export default function Cadastro ({navigation}) {
           <TextInput type="date" name="nascimento" placeholder='Idade:' style={styles.input}/>
           <TextInput type="number" name="cpf" placeholder='CPF:' style={styles.input}/>
           <TextInput type="email" name="email" placeholder='Email:' style={styles.input}/>
-          <TextInput type="text" name="Estado" placeholder='Estado:' style={styles.input}/>
           <TextInput type="password" name="senha" placeholder='Senha:' style={styles.input}/>
           <TextInput type="password" name="Confirme-Senha" placeholder='Confirme a senha:' style={styles.input}/>      
         </View>
@@ -44,9 +43,6 @@ export default function Cadastro ({navigation}) {
     </LinearGradient>
   );
 }
-
-
-
 
 const styles = StyleSheet.create({
 

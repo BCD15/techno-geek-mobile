@@ -116,8 +116,8 @@ export default function Home({ navigation }) {
               Frete grátis para compras acima de R$200,00{" "}
             </Text>
           </View>
+        </View>
         <View style={{ flex: 1, }}>
-          <ScrollView  horizontal={true}>
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
@@ -145,7 +145,6 @@ export default function Home({ navigation }) {
               }}
             />
           </View>
-          </ScrollView>
         </View>
         <View style={styles.container}>
           <View style={styles.banner}>
@@ -191,7 +190,11 @@ export default function Home({ navigation }) {
               placeholder="Comentario"
               style={styles.forms}
             />
-            <TouchableOpacity style={styles.eform}>Enviar</TouchableOpacity>
+            <TouchableOpacity style={styles.eform}>
+              <Text>
+                Enviar
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

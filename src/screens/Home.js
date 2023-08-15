@@ -8,15 +8,16 @@ import {
   ScrollView,
   TextInput,
   Image,
+  TouchableOpacity,
   TouchableWithoutFeedback,
 } from "react-native";
 
-import perfilIcon from '../../assets/perfilIcon.png';
-import searchIcon from '../../assets/searchIcon.png';
-import carrinhoIcon from '../../assets/carrinhoIcon.png';
+import perfilIcon from "../../assets/perfilIcon.png";
+import searchIcon from "../../assets/searchIcon.png";
+import carrinhoIcon from "../../assets/carrinhoIcon.png";
 
 import Item from "./Item";
-import { TouchableOpacity } from "react-native-web";
+// import {  } from "react-native-web";
 
 const categorias = ["Camisetas", "Blusas", "Meias", "Acessórios"];
 
@@ -113,11 +114,11 @@ export default function Home({ navigation }) {
         <View style={styles.upheader}>
           <View style={styles.promo}>
             <Text style={styles.tpromo}>
-              Frete grátis para compras acima de R$200,00{" "}
+              Frete grátis para compras acima de R$200,00
             </Text>
           </View>
         </View>
-        <View style={{ flex: 1, }}>
+        <View style={{ flex: 1 }}>
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
@@ -131,20 +132,6 @@ export default function Home({ navigation }) {
             </TouchableWithoutFeedback>
           </View>
 
-          <View>
-            <SelectDropdown
-              data={categorias}
-              onSelect={(selectedItem, index) => {
-                console.log(selectedItem, index);
-              }}
-              buttonTextAfterSelection={(selectedItem) => {
-                return selectedItem;
-              }}
-              rowTextForSelection={(item) => {
-                return item;
-              }}
-            />
-          </View>
         </View>
         <View style={styles.container}>
           <View style={styles.banner}>
@@ -191,9 +178,7 @@ export default function Home({ navigation }) {
               style={styles.forms}
             />
             <TouchableOpacity style={styles.eform}>
-              <Text>
-                Enviar
-              </Text>
+              <Text>Enviar</Text>
             </TouchableOpacity>
           </View>
         </View>

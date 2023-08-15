@@ -5,8 +5,9 @@ import { Text, TextInput, StyleSheet, View, Image, } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
 import Icon from '../../assets/perfilIcon.png';
+import Cadastro from './Cadastro';
 
-export default function Login ({navigation}) {
+export default function Login ({ navigation }) {
   return (
     <LinearGradient
       colors={['#000000', '#342348']}
@@ -24,7 +25,7 @@ export default function Login ({navigation}) {
         <View style={{alignItems: 'center', margin: 10,}}>
           <Text>
             Não possui conta?
-            <Text style={styles.link} onPress={() => navigation.navigate('Cadastro')}>
+            <Text onPress={() => navigation.navigate('Cadastro')} style={styles.link}>
               Clique Aqui
             </Text>  
           </Text>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import SelectDropdown from "react-native-select-dropdown";
 import {
   StyleSheet,
   View,
@@ -17,9 +16,6 @@ import searchIcon from "../../assets/searchIcon.png";
 import carrinhoIcon from "../../assets/carrinhoIcon.png";
 
 import Item from "./Item";
-// import {  } from "react-native-web";
-
-const categorias = ["Camisetas", "Blusas", "Meias", "Acessórios"];
 
 function InputWithIcon() {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -154,6 +150,7 @@ export default function Home({ navigation }) {
               <Item item={itens} key={itens.id} />
             ))}
           </View>
+
           <View style={styles.footer}>
             <Text style={{ color: "white", fontSize: 23, fontWeight: "bold" }}>
               Alguma dúvida?
@@ -162,19 +159,19 @@ export default function Home({ navigation }) {
             <TextInput
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Name:"
               style={styles.forms}
             />
             <TextInput
-              type="text"
+              type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Email:"
               style={styles.forms}
             />
             <TextInput
               type="text"
               name="comentarios"
-              placeholder="Comentario"
+              placeholder="Comentário:"
               style={styles.forms}
             />
             <TouchableOpacity style={styles.eform}>
@@ -190,13 +187,6 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   scrollView: {
     paddingTop: 10,
-  },
-
-  card: {
-    width: "80%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    backgroundColor: "transparent",
   },
 
   content: {
@@ -222,7 +212,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
     marginBottom: 20,
   },
 

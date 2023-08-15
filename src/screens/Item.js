@@ -8,9 +8,9 @@ export default function Item (props) {
       <Image style={styles.imagem} source={{ uri: props.item.imgitem }} />
       </TouchableOpacity>
       <TouchableOpacity>
-      <Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.item.titulo}</Text>
+      < Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.item.titulo}</Text>
       </TouchableOpacity>
-      <Text style={{color: "grey", margin: 2, fontWeight: "semiBold"}}>{props.item.preco}</Text>
+      <Text style={{color: "grey", margin: 2,}}>{props.item.preco}</Text>
       <TouchableOpacity style={styles.botao}>
         <Text style={{ color: "#FF5F0F", fontWeight: "bold" }}>Comprar</Text>
       </TouchableOpacity>

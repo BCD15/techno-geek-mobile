@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, TextInput, StyleSheet, View, ScrollView } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
-export default function Cadastro ({navigation}) {
+export default function Cadastro ({ navigation }) {
   return (
     <LinearGradient
       colors={['#000000', '#342348']}

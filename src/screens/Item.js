@@ -20,14 +20,14 @@ export default function Item (props) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "white",
-    width: 180,
+    width: "44%",
     height: 300,
     margin: 10,
     borderRadius:10,
   },
   imagem: {
     resizeMode: "stretch",
-    width: 180,
+    width: "100%",
     height: 200,
     borderRadius:10,
   },

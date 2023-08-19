@@ -42,7 +42,7 @@ function InputWithIcon() {
     >
       {isImageVisible && (
         <TouchableWithoutFeedback onPress={handleIconClick}>
-          <Image source={searchIcon} style={styles.lupa} />
+          <Image source={searchIcon} style={styles.imageLupa} />
         </TouchableWithoutFeedback>
       )}
       <View
@@ -73,7 +73,7 @@ export default function Home({ navigation }) {
       id: 1,
       imgitem:
         "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE LOGOS",
+      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE",
       preco: "R$89,90",
     },
     {
@@ -118,8 +118,8 @@ export default function Home({ navigation }) {
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
-            <TouchableWithoutFeedback>
-              <Image source={carrinhoIcon} style={styles.imageLogin}></Image>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate("Carrinho")}>
+              <Image source={carrinhoIcon} style={styles.imageCarrinho}></Image>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback
               onPress={() => navigation.navigate("Login")}
@@ -239,6 +239,13 @@ const styles = StyleSheet.create({
     height: 35,
   },
 
+  imageCarrinho: {
+    width: 32,
+    height: 32,
+    marginRight: 7,
+    marginLeft: 4,
+  },
+
   text: {
     borderRadius: 10,
     fontWeight: "bold",
@@ -251,7 +258,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 
-  lupa: {
+  imageLupa: {
     width: 25,
     height: 25,
   },

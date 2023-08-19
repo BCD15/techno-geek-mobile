@@ -7,20 +7,15 @@ import voltarIcon from "../../assets/voltarIcon.png";
 
 export default function Cadastro ({ navigation }) {
   return (
-    <LinearGradient
-      colors={['#000000', '#342348']}
-      style={{
-        flex: 1,
-      }}>
+    <LinearGradient colors={['#000000', '#342348']} style={{ flex: 1, }}>
         <View style={styles.header}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate("Home")}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableWithoutFeedback>
-            <Text>
+            <Text style={styles.title}>
                 Itens no Carrinho
             </Text>
         </View>
-    
     </LinearGradient>
   );
 }
@@ -28,15 +23,22 @@ export default function Cadastro ({ navigation }) {
 const styles = StyleSheet.create({
     
     header: {
-        backgroundColor: "#6304AE",
-        flexDirection: "row",
-        alignItems: "center",
-        padding: 20,
-        height: 80,
-      },
+      backgroundColor: "#6304AE",
+      flexDirection: "row",
+      alignItems: "center",
+      padding: 20,
+      height: 80,
+    },
 
     imageVoltar: {
-        width: 42,
-        height: 42,
+      width: 40,
+      height: 40,
+    },
+
+    title: {
+      color: "#FF5F0F",
+      fontWeight: "bold",
+      fontSize: 20,
+      marginLeft: 60,
     },
 });

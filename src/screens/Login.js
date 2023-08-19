@@ -81,4 +81,9 @@ const styles = StyleSheet.create({
   link: {
     color: '#FF5F0F',
   },
+
+  botao: {
+    width: 130,
+    backgroundColor: '#6304AE',
+  },
 });

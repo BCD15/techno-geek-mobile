@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import addIcon from "../../assets/addIcon.png";
 
-const addToCartAlert = () => {
+const addToCart = () => {
   alert(
     "Item adicionado ao carrinho",
   )
@@ -22,7 +22,7 @@ export default function Item (props) {
       <TouchableOpacity style={styles.botao}>
         <Text style={{ color: "#FF5F0F", fontWeight: "bold" }}>Comprar</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={addToCartAlert}>
+      <TouchableOpacity onPress={addToCart}>
         <Image style={styles.imageCart} source={addIcon} />
       </TouchableOpacity>
       </View>

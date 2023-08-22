@@ -3,6 +3,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, TextInput, StyleSheet, View, ScrollView, TouchableWithoutFeedback, Image, StatusBar } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
+import Item from "./Item";
+import itens from "./Home"
+
 import voltarIcon from "../../assets/voltarIcon.png";
 
 export default function Cadastro ({ navigation }) {

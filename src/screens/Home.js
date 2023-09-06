@@ -73,7 +73,7 @@ export default function Home({ navigation }) {
   const [itens, setItens] = React.useState([]);
 
   async function getCamisetas() {
-    const {data} = await api.get('/camiseta/')
+    const {data} = await api.get('/camisetas/')
     setItens(data)
   }
 

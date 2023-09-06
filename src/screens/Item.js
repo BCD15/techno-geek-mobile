@@ -18,7 +18,7 @@ export default function Item (props) {
       <TouchableOpacity>
         < Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.item.titulo}</Text>
       </TouchableOpacity>
-      <Text style={{color: "grey", margin: 2,}}>R$ {props.item.preco.replace('.')}</Text>
+      <Text style={{color: "grey", margin: 2,}}>R$ {props.item.preco.replace('.',',')}</Text>
       <View style={{flexDirection: "row",}}>
       <TouchableOpacity style={styles.botao}>
         <Text style={{ color: "#FF5F0F", fontWeight: "bold" }}>Comprar</Text>

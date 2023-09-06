@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   StyleSheet,
@@ -16,6 +16,8 @@ import searchIcon from "../../assets/searchIcon.png";
 import carrinhoIcon from "../../assets/carrinhoIcon.png";
 
 import Item from "./Item";
+
+import api from "../plugins/api";
 
 function InputWithIcon() {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -68,36 +70,16 @@ function InputWithIcon() {
 }
 
 export default function Home({ navigation }) {
-  const [itens, setItens] = React.useState([
-    {
-      id: 1,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true",
-      titulo: "CAMISETA PLUS SIZE DUPLA FACE ONE PIECE",
-      preco: "R$89,90",
-    },
-    {
-      id: 2,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/168877-800-auto?v=637976700407100000&width=800&height=auto&aspect=true",
-      titulo: "CAMISETA ONE PIECE GRUPO",
-      preco: "R$69,90",
-    },
-    {
-      id: 3,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/159717-800-auto?v=637976655524070000&width=800&height=auto&aspect=true",
-      titulo: "CAMISETA NARUTO KAKASHI ANBU",
-      preco: "R$69,90",
-    },
-    {
-      id: 4,
-      imgitem:
-        "https://tfcprw.vtexassets.com/arquivos/ids/171757-800-auto?v=638035198672400000&width=800&height=auto&aspect=true",
-      titulo: "CAMISETA PANTERA NEGRA TRIBAL",
-      preco: "R$79,90",
-    },
-  ]);
+  const [itens, setItens] = React.useState([]);
+
+  async function getCamisetas() {
+    const {data} = await api.get('/camiseta/')
+    setItens(data)
+  }
+
+  useEffect(() => {
+    getCamisetas()
+  },[])
 
   return (
     <LinearGradient
@@ -146,8 +128,8 @@ export default function Home({ navigation }) {
 
           <Text style={styles.text}>Recomendados</Text>
           <View style={styles.main}>
-            {itens.map((itens) => (
-              <Item item={itens} key={itens.id} />
+            {itens.map((item) => (
+              <Item item={item} key={item.id} />
             ))}
           </View>
 

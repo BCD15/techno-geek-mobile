@@ -11,6 +11,7 @@ import Item from './src/screens/Item';
 import Carrinho from './src/screens/Carrinho';
 import { StatusBar } from 'expo-status-bar';
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

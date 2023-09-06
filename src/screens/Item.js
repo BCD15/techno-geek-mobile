@@ -12,8 +12,8 @@ export default function Item (props) {
   return (
     <View style={styles.card}>
       <TouchableOpacity>
-        {/* <Image style={styles.imagem} source={{ uri: props.item.imgitem }} /> */}
-        <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} />
+        <Image style={styles.imagem} source={{ uri: props.item.first_image }} />
+        {/* <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} /> */}
       </TouchableOpacity>
       <TouchableOpacity>
         < Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.item.titulo}</Text>

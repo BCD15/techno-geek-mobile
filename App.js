@@ -9,6 +9,7 @@ import Login from './src/screens/Login';
 import Cadastro from './src/screens/Cadastro';
 import Item from './src/screens/Item';
 import Carrinho from './src/screens/Carrinho';
+
 import { StatusBar } from 'expo-status-bar';
 
 
@@ -24,7 +25,7 @@ export default function App() {
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Cadastro" component={Cadastro} />
               <Stack.Screen name="Item" component={Item} />
-              <Stack.Screen name="Carrinho" component={Carrinho} />    
+              <Stack.Screen name="Carrinho" component={Carrinho} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

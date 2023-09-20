@@ -1,4 +1,5 @@
-Equipe: Carlos Eduardo Mello (git: carlos47fnaf)
+Equipe: 
+Carlos Eduardo Mello (git: carlos47fnaf)
 
 Bruno Corrêa Dias (git: BCD15)
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import addIcon from "../../assets/addIcon.png";
@@ -8,10 +9,10 @@ const addToCart = () => {
   )
 }
 
-export default function Item (props) {
+export default function Item ( props) {
   return (
     <View style={styles.card}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')}>
         <Image style={styles.imagem} source={{ uri: props.item.first_image }} />
         {/* <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} /> */}
       </TouchableOpacity>

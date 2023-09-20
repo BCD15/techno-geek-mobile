@@ -5,7 +5,6 @@ import { Text, TextInput, StyleSheet, View, Image, } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
 import Icon from '../../assets/perfilIcon.png';
-import Cadastro from './Cadastro';
 
 export default function Login ({ navigation }) {
   return (

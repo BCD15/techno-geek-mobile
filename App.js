@@ -7,11 +7,11 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import Cadastro from './src/screens/Cadastro';
-import Item from './src/screens/Item';
+import ItemCard from './src/screens/ItemCard';
 import Carrinho from './src/screens/Carrinho';
+import ItemDetail from './src/screens/ItemDetail';
 
 import { StatusBar } from 'expo-status-bar';
-
 
 const Stack = createNativeStackNavigator();
 
@@ -24,8 +24,9 @@ export default function App() {
               <Stack.Screen name="Home" component={Home} />
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Cadastro" component={Cadastro} />
-              <Stack.Screen name="Item" component={Item} />
+              <Stack.Screen name="ItemCard" component={ItemCard} />
               <Stack.Screen name="Carrinho" component={Carrinho} />
+              <Stack.Screen name="ItemDetail" component={ItemDetail} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

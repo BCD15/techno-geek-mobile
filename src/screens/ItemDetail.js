@@ -1,14 +1,10 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Text, TextInput, StyleSheet, View, ScrollView, TouchableWithoutFeedback, Image, StatusBar } from 'react-native';
-import { Button, Card } from 'react-native-paper';
-
-import Item from "./ItemCard";
-import itens from "./Home"
+import { Text, StyleSheet, View, TouchableWithoutFeedback, Image } from 'react-native';
 
 import voltarIcon from "../../assets/voltarIcon.png";
 
-export default function Cadastro ({ navigation }) {
+export default function ItemDetail ({ navigation }) {
   return (
     <LinearGradient colors={['#000000', '#342348']} style={{ flex: 1, }}>
         <View style={styles.header}>

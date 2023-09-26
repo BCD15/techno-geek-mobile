@@ -74,12 +74,23 @@ export default function Home({ navigation }) {
 
   async function getCamisetas() {
     const {data} = await api.get('/camisetas/')
-    setItens(data)
+    setItens((original) => [...original, ...data])
+  }
+
+  async function getMoletons() {
+    const {data} = await api.get('/moletons/')
+    setItens((original) => [...original, ...data])
+  }
+
+  async function fetchData() {
+    await getCamisetas()
+    await getMoletons()
   }
 
   useEffect(() => {
-    getCamisetas()
+    fetchData()
   },[])
+
 
   return (
     <LinearGradient
@@ -109,7 +120,6 @@ export default function Home({ navigation }) {
               <Image source={perfilIcon} style={styles.imageLogin}></Image>
             </TouchableWithoutFeedback>
           </View>
-
         </View>
         <View style={styles.container}>
           <View style={styles.banner}>

@@ -1,21 +1,48 @@
-import React from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Text, StyleSheet, View, TouchableWithoutFeedback, Image } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
+
+import api from "../plugins/api";
 
 import voltarIcon from "../../assets/voltarIcon.png";
 
-export default function ItemDetail ({ navigation }) {
+export default function Cadastro ({ navigation }) {
+
+  const [itens, setItens] = React.useState([]);
+
+  async function getCamisetas() {
+    const {data} = await api.get('/camisetas/')
+    setItens((original) => [...original, ...data])
+  }
+
+  async function getMoletons() {
+    const {data} = await api.get('/moletons/')
+    setItens((original) => [...original, ...data])
+  }
+
+  async function fetchData() {
+    await getCamisetas()
+    await getMoletons()
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
   return (
-    <LinearGradient colors={['#000000', '#342348']} style={{ flex: 1, }}>
+    <View style={{backgroundColor:"#E3E3E3",}}>
         <View style={styles.header}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate("Home")}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableWithoutFeedback>
-            <Text style={styles.title}>
-                Itens no Carrinho
-            </Text>
+            < Text style={styles.title}>{item.titulo}</Text>
         </View>
-    </LinearGradient>
+    </View>
   );
 }
 

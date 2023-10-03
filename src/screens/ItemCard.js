@@ -9,7 +9,7 @@ const addToCart = () => {
   )
 }
 
-export default function Item ( props) {
+export default function Item ( props ) {
   return (
     <View style={styles.card}>
       <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')}>

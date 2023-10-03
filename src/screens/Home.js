@@ -15,7 +15,7 @@ import perfilIcon from "../../assets/perfilIcon.png";
 import searchIcon from "../../assets/searchIcon.png";
 import carrinhoIcon from "../../assets/carrinhoIcon.png";
 
-import Item from "./ItemCard";
+import ItemCard from "./ItemCard";
 
 import api from "../plugins/api";
 
@@ -139,7 +139,7 @@ export default function Home({ navigation }) {
           <Text style={styles.text}>Recomendados</Text>
           <View style={styles.main}>
             {itens.map((item) => (
-              <Item item={item} navigation={navigation} key={item.id} />
+              <ItemCard item={item} navigation={navigation} key={item.id} />
             ))}
           </View>
 

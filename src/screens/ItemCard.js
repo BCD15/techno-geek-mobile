@@ -17,7 +17,7 @@ export default function Item ( props ) {
         {/* <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} /> */}
       </TouchableOpacity>
       <TouchableOpacity>
-        < Text style={{color: "black", margin: 2, fontWeight: "bold" }}>{props.item.titulo}</Text>
+        < Text style={{color: "black", marginLeft: 3, marginLeft: 3, marginLeft: 3, fontWeight: "bold", }}>{props.item.titulo}</Text>
       </TouchableOpacity>
       <Text style={{color: "grey", margin: 2,}}>R$ {props.item.preco.replace('.',',')}</Text>
       <View style={{flexDirection: "row",}}>

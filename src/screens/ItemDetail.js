@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -7,32 +7,10 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
-import api from "../plugins/api";
+import voltarIcon from "../../assets/voltarIcon2.png";
+import imageBlackEdition from "../../assets/imageBlackEdition.png";
 
-import voltarIcon from "../../assets/voltarIcon.png";
-
-export default function Cadastro ({ navigation }) {
-
-  const [itens, setItens] = React.useState([]);
-
-  async function getCamisetas() {
-    const {data} = await api.get('/camisetas/')
-    setItens((original) => [...original, ...data])
-  }
-
-  async function getMoletons() {
-    const {data} = await api.get('/moletons/')
-    setItens((original) => [...original, ...data])
-  }
-
-  async function fetchData() {
-    await getCamisetas()
-    await getMoletons()
-  }
-
-  useEffect(() => {
-    fetchData()
-  },[])
+export default function ItemDetail ({ navigation }) {
 
   return (
     <View style={{backgroundColor:"#E3E3E3",}}>
@@ -40,7 +18,15 @@ export default function Cadastro ({ navigation }) {
             <TouchableWithoutFeedback onPress={() => navigation.navigate("Home")}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableWithoutFeedback>
-            < Text style={styles.title}>{item.titulo}</Text>
+            <Text style={styles.titleHeader}>Camiseta de one piece black edition</Text>
+        </View>
+        <View style={styles.imageMain}>
+          <Image source={imageBlackEdition} style={styles.imageBlackEdition}></Image>
+        </View>
+        <View style={styles.main}>
+          <Text style={styles.titleMain}>
+            Camiseta de one piece black edition
+          </Text>
         </View>
     </View>
   );
@@ -53,18 +39,28 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       alignItems: "center",
       padding: 20,
-      height: 80,
+      height: "14%",
     },
 
     imageVoltar: {
-      width: 40,
-      height: 40,
+      width: 36,
+      height: 36,
     },
 
-    title: {
-      color: "#FF5F0F",
-      fontWeight: "bold",
+    titleHeader: {
+      color: "#FFFFFF",
+      fontWeight: '500',
       fontSize: 20,
-      marginLeft: 60,
+      marginLeft: 30,
+      maxWidth: '100%',
+    },
+
+    // imageMain: {
+
+    // },
+
+    imageBlackEdition: {
+      width: '100%',
+      height: 350,
     },
 });

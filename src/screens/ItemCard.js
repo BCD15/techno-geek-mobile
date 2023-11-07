@@ -16,13 +16,13 @@ export default function Item ( props ) {
         <Image style={styles.imagem} source={{ uri: props.item.first_image }} />
         {/* <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} /> */}
       </TouchableOpacity>
-      <TouchableOpacity>
-        < Text style={{color: "black", marginLeft: 3, marginLeft: 3, marginLeft: 3, fontWeight: "bold", }}>{props.item.titulo}</Text>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')}>
+        < Text style={{color: "black", marginLeft: 7, fontWeight: "bold", fontSize: 15, }}>{props.item.titulo}</Text>
       </TouchableOpacity>
-      <Text style={{color: "grey", margin: 2,}}>R$ {props.item.preco.replace('.',',')}</Text>
+      <Text style={{color: "grey", margin: 2, marginLeft: 7,}}>R$ {props.item.preco.replace('.',',')}</Text>
       <View style={{flexDirection: "row",}}>
-      <TouchableOpacity style={styles.botao}>
-        <Text style={{ color: "#FF5F0F", fontWeight: "bold" }}>Comprar</Text>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')} style={{marginLeft: 7,}}>
+        <Text style={{ color: "#FF5F0F", fontWeight: "bold", fontSize: 14, marginTop: 10,}}>Comprar</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={addToCart}>
         <Image style={styles.imageCart} source={addIcon} />
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   imageCart: {
     width: 20,
     height: 20,
-    marginLeft: 78,
+    marginLeft: 73,
+    marginTop: 10,
   },
 });

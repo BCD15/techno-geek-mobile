@@ -43,24 +43,31 @@ const styles = StyleSheet.create({
     },
 
     imageVoltar: {
-      width: 36,
-      height: 36,
+      width: 33,
+      height: 33,
     },
 
     titleHeader: {
       color: "#FFFFFF",
       fontWeight: '500',
-      fontSize: 20,
-      marginLeft: 30,
+      fontSize: 22,
+      marginLeft: 15,
       maxWidth: '100%',
     },
-
-    // imageMain: {
-
-    // },
 
     imageBlackEdition: {
       width: '100%',
       height: 350,
+      backgroundColor: 'red',
+    },
+
+    main: {
+    },
+
+    titleMain: {
+      color: "#6304AE",
+      fontWeight: 'bold',
+      fontSize: 20,
+      margin: 7,
     },
 });

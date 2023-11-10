@@ -2,6 +2,7 @@ import React from "react";
 import {
   StyleSheet,
   View,
+  ScrollView,
   Text,
   Image,
   TouchableWithoutFeedback,
@@ -13,21 +14,27 @@ import imageBlackEdition from "../../assets/imageBlackEdition.png";
 export default function ItemDetail ({ navigation }) {
 
   return (
-    <View style={{backgroundColor:"#E3E3E3",}}>
+    <View style={{backgroundColor:"#fff", height: '100%',}}>
         <View style={styles.header}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate("Home")}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableWithoutFeedback>
             <Text style={styles.titleHeader}>Camiseta de one piece black edition</Text>
         </View>
-        <View style={styles.imageMain}>
+        <ScrollView style={styles.main}>
           <Image source={imageBlackEdition} style={styles.imageBlackEdition}></Image>
-        </View>
-        <View style={styles.main}>
           <Text style={styles.titleMain}>
             Camiseta de one piece black edition
           </Text>
-        </View>
+          <Text style={{ color: "#9F9F9F", fontSize: 14 }}>
+            Limpeza comum: a remoção de pó, resíduos de substâncias orgânicas e
+            inorgânicas e a organização do local, fazem parte da limpeza comum.
+            Geralmente, as tarefas incluem limpezas básicas ou de manutenção,
+            com foco naquilo que é visto rapidamente. Mesmo assim, os
+            procedimentos envolvem a remoção seca ou molhada da...
+            <Text style={{ color: "#3B8AEB", fontSize: 14 }}>Ver Mais ▼</Text>
+          </Text>
+        </ScrollView>
     </View>
   );
 }
@@ -39,7 +46,7 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       alignItems: "center",
       padding: 20,
-      height: "14%",
+      height: "10%",
     },
 
     imageVoltar: {
@@ -57,17 +64,17 @@ const styles = StyleSheet.create({
 
     imageBlackEdition: {
       width: '100%',
-      height: 350,
-      backgroundColor: 'red',
+      maxHeight: '35%',
     },
 
     main: {
+      height: '90%',
     },
 
     titleMain: {
       color: "#6304AE",
       fontWeight: 'bold',
-      fontSize: 20,
+      fontSize: 22,
       margin: 7,
     },
 });

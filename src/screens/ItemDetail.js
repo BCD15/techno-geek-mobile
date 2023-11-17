@@ -26,13 +26,11 @@ export default function ItemDetail ({ navigation }) {
           <Text style={styles.titleMain}>
             Camiseta de one piece black edition
           </Text>
-          <Text style={{ color: "#9F9F9F", fontSize: 14 }}>
-            Limpeza comum: a remoção de pó, resíduos de substâncias orgânicas e
-            inorgânicas e a organização do local, fazem parte da limpeza comum.
-            Geralmente, as tarefas incluem limpezas básicas ou de manutenção,
-            com foco naquilo que é visto rapidamente. Mesmo assim, os
-            procedimentos envolvem a remoção seca ou molhada da...
-            <Text style={{ color: "#3B8AEB", fontSize: 14 }}>Ver Mais ▼</Text>
+          <Text style={styles.textMain}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type 
+            specimen book.
           </Text>
         </ScrollView>
     </View>
@@ -75,6 +73,16 @@ const styles = StyleSheet.create({
       color: "#6304AE",
       fontWeight: 'bold',
       fontSize: 22,
-      margin: 7,
+      marginLeft: 7,
+      marginRight: 7,
+      marginTop: 7,
     },
+
+    textMain: {
+      color: "#9F9F9F",
+      fontSize: 15,
+      marginLeft: 7,
+      marginRight: 7,
+      marginTop: 4,
+    }
 });

@@ -7,16 +7,21 @@ import {
   Image,
   TouchableWithoutFeedback,
   TouchableOpacity,
-  Button,
+  Alert,
+  Checkbox,
 } from 'react-native';
 
 import voltarIcon from '../../assets/voltarIcon2.png';
 import imageBlackEdition from '../../assets/imageBlackEdition.png';
 
+const handleAlert = () => {
+  Alert.alert("Compra realizada" , "Obrigado pela preferência");
+};
+
 export default function ItemDetail ({ navigation }) {
 
   return (
-    <View style={{backgroundColor:'#fff', height: '100%',}}>
+    <View style={{backgroundColor:'#fff',}}>
         <View style={styles.header}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate('Home')}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
@@ -30,21 +35,25 @@ export default function ItemDetail ({ navigation }) {
               Camiseta de one piece black edition
             </Text>
             <Text style={styles.textMain}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type 
-              specimen book.
+              A camiseta One Piece Dupla Face é um produto original, licenciado e exclusivo Piticas.
+              Estampa inspirada na personagem de mangá One Piece, as aventuras de as aventuras de 
+              Luffy e a sua tripulação, os Piratas do Chapéu de Palha, exploram a Grand Line em 
+              busca do tesouro mais procurado do mundo. Na Piticas, prezamos por qualidade, 
+              diversidade e conforto. A T-Shirt clássica, foi confeccionada em 100% algodão, 
+              conta com estilo autêntico, feita pelos nossos nerdsigners para vestir seu lado fã! 
+              Vista com orgulho, vista seu lado fã.
             </Text>
+
           </View>
           <View style={styles.footer}>
-            <Text style={{ color: '#817C7C', fontSize: 13, fontWeight: '500',}}>
-              53 avaliações ⭐ ⭐ ⭐ ⭐ ⭐
+            <Text style={{ color: '#817C7C', fontSize: 13, fontWeight: '500', maxWidth: '25%', textAlign: 'center',}}>
+            ⭐ ⭐ ⭐ ⭐ ⭐ 53 avaliações 
             </Text>
-            <Text style={{ color: '#FF5F0F', fontSize: 18, fontWeight: '500',}}>
+            <Text style={{ color: '#FF5F0F', fontSize: 20, fontWeight: '500',}}>
               R$89,90
             </Text>
-            <TouchableOpacity style={styles.btnComprar}>
-              <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 17,}}>Comprar</Text>
+            <TouchableOpacity onPress={handleAlert} style={styles.btnComprar}>
+              <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18,}}>Comprar</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -59,7 +68,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       padding: 20,
-      height: '10%',
+      minHeight: '10%',
     },
 
     imageVoltar: {
@@ -72,16 +81,16 @@ const styles = StyleSheet.create({
       fontWeight: '500',
       fontSize: 22,
       marginLeft: 15,
-      maxWidth: '100%',
+      width: '90%',
     },
 
     imageBlackEdition: {
       width: '100%',
-      maxHeight: '55%',
+      maxHeight: '40%',
     },
 
     main: {
-      height: '93%',
+      minHeight: '93%',
     },
 
     titleMain: {
@@ -91,6 +100,7 @@ const styles = StyleSheet.create({
       marginLeft: 7,
       marginRight: 7,
       marginTop: 7,
+      width: '90%',
     },
 
     textMain: {

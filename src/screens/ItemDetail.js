@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -6,56 +6,48 @@ import {
   Text,
   Image,
   TouchableWithoutFeedback,
-  Pressable,
-} from "react-native";
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 
-import voltarIcon from "../../assets/voltarIcon2.png";
-import imageBlackEdition from "../../assets/imageBlackEdition.png";
+import voltarIcon from '../../assets/voltarIcon2.png';
+import imageBlackEdition from '../../assets/imageBlackEdition.png';
 
 export default function ItemDetail ({ navigation }) {
 
   return (
-    <View style={{backgroundColor:"#fff", height: '100%',}}>
-
+    <View style={{backgroundColor:'#fff', height: '100%',}}>
         <View style={styles.header}>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate("Home")}>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Home')}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableWithoutFeedback>
             <Text style={styles.titleHeader}>Camiseta de one piece black edition</Text>
         </View>
-
         <ScrollView>
-
           <View style={styles.main}>
             <Image source={imageBlackEdition} style={styles.imageBlackEdition}></Image>
             <Text style={styles.titleMain}>
               Camiseta de one piece black edition
             </Text>
             <Text style={styles.textMain}>
-              A camiseta One Piece Dupla Face é um produto original, licenciado e exclusivo Piticas. Estampa inspirada na personagem
-              de mangá One Piece, as aventuras de as aventuras de Luffy e a sua tripulação, os Piratas do Chapéu de Palha, exploram a 
-              Grand Line em busca do tesouro mais procurado do mundo. Na Piticas, prezamos por qualidade, diversidade e conforto. 
-              A T-Shirt clássica, foi confeccionada em 100% algodão, conta com estilo autêntico, feita pelos nossos nerdsigners 
-              para vestir seu lado fã! Vista com orgulho, vista seu lado fã.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+              when an unknown printer took a galley of type and scrambled it to make a type 
+              specimen book.
             </Text>
           </View>
-
-        </ScrollView>
-
           <View style={styles.footer}>
-            <Text style={{ color: '#9F9F9F', fontSize: 13, }}>
-              52 avaliações ⭐ ⭐ ⭐ ⭐ ⭐ 
+            <Text style={{ color: '#817C7C', fontSize: 13, fontWeight: '500',}}>
+              53 avaliações ⭐ ⭐ ⭐ ⭐ ⭐
             </Text>
-            <Text style={styles.preco}>
-              R$18,90
+            <Text style={{ color: '#FF5F0F', fontSize: 18, fontWeight: '500',}}>
+              R$89,90
             </Text>
-            <Pressable>
-              <Text>
-                oi
-              </Text>
-            </Pressable>
+            <TouchableOpacity style={styles.btnComprar}>
+              <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 17,}}>Comprar</Text>
+            </TouchableOpacity>
           </View>
-
+        </ScrollView>
     </View>
   );
 }
@@ -63,11 +55,11 @@ export default function ItemDetail ({ navigation }) {
 const styles = StyleSheet.create({
     
     header: {
-      backgroundColor: "#6304AE",
-      flexDirection: "row",
-      alignItems: "center",
+      backgroundColor: '#6304AE',
+      flexDirection: 'row',
+      alignItems: 'center',
       padding: 20,
-      height: "10%",
+      height: '10%',
     },
 
     imageVoltar: {
@@ -76,7 +68,7 @@ const styles = StyleSheet.create({
     },
 
     titleHeader: {
-      color: "#FFFFFF",
+      color: '#FFFFFF',
       fontWeight: '500',
       fontSize: 22,
       marginLeft: 15,
@@ -85,15 +77,15 @@ const styles = StyleSheet.create({
 
     imageBlackEdition: {
       width: '100%',
-      maxHeight: '40%',
+      maxHeight: '55%',
     },
 
     main: {
-      height: '90%',
+      height: '93%',
     },
 
     titleMain: {
-      color: "#6304AE",
+      color: '#6304AE',
       fontWeight: 'bold',
       fontSize: 23,
       marginLeft: 7,
@@ -102,23 +94,28 @@ const styles = StyleSheet.create({
     },
 
     textMain: {
-      color: "#9F9F9F",
-      fontSize: 16,
+      color: '#9F9F9F',
+      fontSize: 15,
       marginLeft: 7,
       marginRight: 7,
       marginTop: 4,
     },
 
     footer: {
+      flex: 1,
       flexDirection: 'row',
-      height: "10%",
-      marginLeft: 15,
-      marginRight: 15,
-      marginTop: 10,
-      justifyContent: 'space-between', 
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      width: '100%',
+      height: '7%',
     },
 
-    preco: {
-      fontWeight: 'bold',
-    }
+    btnComprar: {
+      backgroundColor: '#FF5F0F',
+      width: '25%',
+      height: '45%',
+      borderRadius: 15, 
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
 });

@@ -1,10 +1,7 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Text, TextInput, StyleSheet, View, ScrollView, TouchableWithoutFeedback, Image, StatusBar } from 'react-native';
+import { Text, StyleSheet, View, ScrollView, TouchableWithoutFeedback, Image } from 'react-native';
 import { Button, Card } from 'react-native-paper';
-
-import Item from "./ItemCard";
-import itens from "./Home"
 
 import voltarIcon from "../../assets/voltarIcon.png";
 

@@ -18,7 +18,6 @@ export default function Cadastro ({ navigation }) {
         </View>
         <View>
           <TextInput type="text" name="name" placeholder='Nome:' style={styles.input}/>
-          <TextInput type="date" name="nascimento" placeholder='Idade:' style={styles.input}/>
           <TextInput type="number" name="cpf" placeholder='CPF:' style={styles.input}/>
           <TextInput type="email" name="email" placeholder='Email:' style={styles.input}/>
           <TextInput type="password" name="senha" placeholder='Senha:' style={styles.input}/>
@@ -48,16 +47,16 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 200,
   },
 
   card: {
     backgroundColor: '#6304AE',
-    width: '100%',
+    width: '85%',
     padding: 10,
     marginTop: 10,
+    marginLeft: 28,
   },
 
   titleContainer: {

@@ -5,11 +5,11 @@ import {
   ScrollView,
   Text,
   Image,
-  TouchableWithoutFeedback,
   TouchableOpacity,
   Alert,
-  Checkbox,
 } from 'react-native';
+import { RadioButton, } from 'react-native-paper';
+
 
 import voltarIcon from '../../assets/voltarIcon2.png';
 import imageBlackEdition from '../../assets/imageBlackEdition.png';
@@ -19,13 +19,14 @@ const handleAlert = () => {
 };
 
 export default function ItemDetail ({ navigation }) {
+  const [value, setValue] = React.useState('first');
 
   return (
     <View style={{backgroundColor:'#fff',}}>
         <View style={styles.header}>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
             <Text style={styles.titleHeader}>Camiseta de one piece black edition</Text>
         </View>
         <ScrollView>
@@ -43,7 +44,21 @@ export default function ItemDetail ({ navigation }) {
               conta com estilo autêntico, feita pelos nossos nerdsigners para vestir seu lado fã! 
               Vista com orgulho, vista seu lado fã.
             </Text>
-
+          </View>
+          <View style={styles.subMain}>
+            <Text style={{fontWeight: '700', fontSize: 20, marginBottom: 15,}}>Tamanhos:</Text>
+            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+              <View style={{flexDirection: 'row', justifyContent: 'space-evenly',  width: '100%',}}>
+                <Text style={{fontSize: 20, marginRight: -30, color: '#6304AE', fontWeight: '500',}}>P</Text>
+                <RadioButton value="first" color='#FF5F0F'/>
+                <Text style={{fontSize: 20, marginRight: -30, color: '#6304AE', fontWeight: '500',}}>M</Text>
+                <RadioButton value="second" color='#FF5F0F'/>
+                <Text style={{fontSize: 20, marginRight: -30, color: '#6304AE', fontWeight: '500',}}>G</Text>
+                <RadioButton value="third" color='#FF5F0F'/>
+                <Text style={{fontSize: 20, marginRight: -30, color: '#6304AE', fontWeight: '500',}}>GG</Text>
+                <RadioButton value="four" color='#FF5F0F'/>
+              </View>
+            </RadioButton.Group>
           </View>
           <View style={styles.footer}>
             <Text style={{ color: '#817C7C', fontSize: 13, fontWeight: '500', maxWidth: '25%', textAlign: 'center',}}>
@@ -90,7 +105,8 @@ const styles = StyleSheet.create({
     },
 
     main: {
-      minHeight: '93%',
+      height: '76%',
+      backgroundColor: 'red',
     },
 
     titleMain: {
@@ -111,13 +127,23 @@ const styles = StyleSheet.create({
       marginTop: 4,
     },
 
+    subMain: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      // backgroundColor: 'blue',
+      width: '100%',
+      height: '10%',
+    },
+
     footer: {
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
       width: '100%',
-      height: '7%',
+      maxHeight: '7%',
+      // backgroundColor: 'green',
+
     },
 
     btnComprar: {

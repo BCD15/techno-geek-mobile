@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Text, StyleSheet, View, ScrollView, TouchableWithoutFeedback, Image } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
-import voltarIcon from "../../assets/voltarIcon.png";
+import voltarIcon from "../../assets/voltarIcon2.png";
 
 export default function Cadastro ({ navigation }) {
   return (
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-      color: "#FF5F0F",
+      color: "#fff",
       fontWeight: "bold",
       fontSize: 20,
       marginLeft: 60,

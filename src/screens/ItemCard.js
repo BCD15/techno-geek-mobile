@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Alert } from "react-native";
 
 import addIcon from "../../assets/addIcon.png";
 
 const addToCart = () => {
-  alert(
-    "Item adicionado ao carrinho",
+  Alert.alert(
+    "Item adicionado com sucesso", "o item foi adicionado ao carrinho",
   )
 }
 

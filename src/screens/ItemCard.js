@@ -8,7 +8,6 @@ const addToCart = () => {
     "Item adicionado com sucesso", "o item foi adicionado ao carrinho",
   )
 }
-
 export default function Item ( props ) {
   return (
     <View style={styles.card}>

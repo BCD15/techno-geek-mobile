@@ -9,6 +9,7 @@ import {
   Image,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 
 import perfilIcon from "../../assets/perfilIcon.png";
@@ -18,6 +19,10 @@ import carrinhoIcon from "../../assets/carrinhoIcon.png";
 import ItemCard from "./ItemCard";
 
 import api from "../plugins/api";
+
+const handleAlert = () => {
+  Alert.alert("Em Breve" , "Função em desenvolvimento");
+};
 
 function InputWithIcon() {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -111,7 +116,7 @@ export default function Home({ navigation }) {
           <View style={styles.header}>
             <Text style={styles.title}>TechnoGeek</Text>
             <InputWithIcon />
-            <TouchableWithoutFeedback onPress={() => navigation.navigate("Carrinho")}>
+            <TouchableWithoutFeedback onPress={handleAlert}>
               <Image source={carrinhoIcon} style={styles.imageCarrinho}></Image>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback

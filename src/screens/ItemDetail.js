@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import { RadioButton, } from 'react-native-paper';
 
-
 import voltarIcon from '../../assets/voltarIcon2.png';
 import imageBlackEdition from '../../assets/imageBlackEdition.png';
 
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
 
     main: {
       height: '76%',
-      backgroundColor: 'red',
+      // backgroundColor: 'red',
     },
 
     titleMain: {
@@ -130,9 +129,9 @@ const styles = StyleSheet.create({
     subMain: {
       flexDirection: 'column',
       justifyContent: 'center',
-      // backgroundColor: 'blue',
       width: '100%',
       height: '10%',
+      // backgroundColor: 'blue',
     },
 
     footer: {

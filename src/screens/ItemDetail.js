@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
 
     imageBlackEdition: {
       width: '100%',
-      maxHeight: '40%',
+      height: 500,
     },
 
     main: {
-      height: '76%',
-      // backgroundColor: 'red',
+      height: 800,
+      backgroundColor: 'red',
     },
 
     titleMain: {
@@ -123,10 +123,10 @@ const styles = StyleSheet.create({
 
     subMain: {
       flexDirection: 'column',
-      justifyContent: 'center',
+      // justifyContent: 'center',
       width: '100%',
-      height: '10%',
-      // backgroundColor: 'blue',
+      height: 100,
+      backgroundColor: 'blue',
     },
 
     footer: {
@@ -135,9 +135,8 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       width: '100%',
-      maxHeight: '7%',
-      // backgroundColor: 'green',
-
+      height: 130,
+      backgroundColor: 'green',
     },
 
     btnComprar: {

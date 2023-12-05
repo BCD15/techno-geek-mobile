@@ -11,16 +11,16 @@ const addToCart = () => {
 export default function Item ( props ) {
   return (
     <View style={styles.card}>
-      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail', {item: props.item})}>
         <Image style={styles.imagem} source={{ uri: props.item.first_image }} />
         {/* <Image style={styles.imagem} source={{ uri: "https://tfcprw.vtexassets.com/arquivos/ids/157344-1200-auto?v=637976645140470000&width=1200&height=auto&aspect=true" }} /> */}
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail', {item: props.item})}>
         <Text style={{color: "black", marginLeft: 7, fontWeight: "bold", fontSize: 15, }}>{props.item.titulo}</Text>
       </TouchableOpacity>
       <Text style={{color: "grey", margin: 2, marginLeft: 7,}}>R$ {props.item.preco.replace('.',',')}</Text>
       <View style={{flexDirection: "row",}}>
-      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail')} style={{marginLeft: 7,}}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('ItemDetail', {item: props.item})} style={{marginLeft: 7,}}>
         <Text style={{ color: "#FF5F0F", fontWeight: "bold", fontSize: 14, marginTop: 10,}}>Comprar</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={addToCart}>

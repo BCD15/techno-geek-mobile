@@ -17,8 +17,9 @@ const handleAlert = () => {
   Alert.alert("Compra realizada" , "Obrigado pela preferência");
 };
 
-export default function ItemDetail ({ navigation }) {
+export default function ItemDetail ({ navigation, route }) {
   const [value, setValue] = React.useState('first');
+  const { item } = route.params
 
   return (
     <View style={{backgroundColor:'#fff',}}>
@@ -26,22 +27,16 @@ export default function ItemDetail ({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
               <Image source={voltarIcon} style={styles.imageVoltar}></Image>
             </TouchableOpacity>
-            <Text style={styles.titleHeader}>Camiseta de one piece black edition</Text>
+            <Text style={styles.titleHeader}>{item.titulo}</Text>
         </View>
         <ScrollView>
           <View style={styles.main}>
-            <Image source={imageBlackEdition} style={styles.imageBlackEdition}></Image>
+            <Image source={{ uri:item.first_image }} style={styles.imageBlackEdition}></Image>
             <Text style={styles.titleMain}>
-              Camiseta de one piece black edition
+              {item.titulo}
             </Text>
             <Text style={styles.textMain}>
-              A camiseta One Piece Dupla Face é um produto original, licenciado e exclusivo Piticas.
-              Estampa inspirada na personagem de mangá One Piece, as aventuras de as aventuras de 
-              Luffy e a sua tripulação, os Piratas do Chapéu de Palha, exploram a Grand Line em 
-              busca do tesouro mais procurado do mundo. Na Piticas, prezamos por qualidade, 
-              diversidade e conforto. A T-Shirt clássica, foi confeccionada em 100% algodão, 
-              conta com estilo autêntico, feita pelos nossos nerdsigners para vestir seu lado fã! 
-              Vista com orgulho, vista seu lado fã.
+              {item.descricao}
             </Text>
           </View>
           <View style={styles.subMain}>
@@ -64,7 +59,7 @@ export default function ItemDetail ({ navigation }) {
             ⭐ ⭐ ⭐ ⭐ ⭐ 53 avaliações 
             </Text>
             <Text style={{ color: '#FF5F0F', fontSize: 20, fontWeight: '500',}}>
-              R$89,90
+              R${item.preco.replace('.',',')}
             </Text>
             <TouchableOpacity onPress={handleAlert} style={styles.btnComprar}>
               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 18,}}>Comprar</Text>

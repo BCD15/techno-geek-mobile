@@ -40,7 +40,7 @@ export default function ItemDetail ({ navigation, route }) {
             </Text>
           </View>
           <View style={styles.subMain}>
-            <Text style={{fontWeight: '700', fontSize: 20, marginBottom: 15,}}>Tamanhos:</Text>
+            <Text style={{fontWeight: '700', fontSize: 20, marginBottom: 15, marginLeft: 7,}}>Tamanhos:</Text>
             <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
               <View style={{flexDirection: 'row', justifyContent: 'space-evenly',  width: '100%',}}>
                 <Text style={{fontSize: 20, marginRight: -30, color: '#6304AE', fontWeight: '500',}}>P</Text>
@@ -95,12 +95,12 @@ const styles = StyleSheet.create({
 
     imageBlackEdition: {
       width: '100%',
-      height: 500,
+      height: 370,
     },
 
     main: {
-      height: 800,
-      backgroundColor: 'red',
+      height: 520,
+      // backgroundColor: 'red',
     },
 
     titleMain: {
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
       // justifyContent: 'center',
       width: '100%',
       height: 100,
-      backgroundColor: 'blue',
+      // backgroundColor: 'blue',
     },
 
     footer: {
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       width: '100%',
-      height: 130,
-      backgroundColor: 'green',
+      height: 100,
+      // backgroundColor: 'green',
     },
 
     btnComprar: {
